@@ -27,6 +27,9 @@ export class AppComponent {
 }
 
 @Component({
-  template: 'this is overlay content',
+  template: ` <div>this is overlay content</div>`,
+  host: {
+    class: 'overlay-content',
+  },
 })
 export class OverlayContentComponent {}
