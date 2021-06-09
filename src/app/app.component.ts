@@ -17,12 +17,11 @@ export class AppComponent {
 
   showOverlay() {
     const portal = new ComponentPortal(OverlayContentComponent);
+    portal.attach(this.overlayRef);
 
     this.overlayRef.backdropClick().subscribe(() => {
-      this.overlayRef.detach();
+      portal.detach();
     });
-
-    this.overlayRef.attach(portal);
   }
 }
 
